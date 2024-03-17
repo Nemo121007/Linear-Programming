@@ -9,8 +9,8 @@ def arrayIsNegative(array, size):
     массив для проверки на неотрицательность
     :return: True - массив имеет отрицательные элементы, иначе False
     """
-    for i in range(len(size)):
-        if array[0][i] > 0:
+    for i in range(size):
+        if array[0][i] != 0:
             return True
         elif (array[0][i] == 0 and array[1][i] > 0):
             return True
@@ -111,15 +111,14 @@ def findOptimalVector(a, b, c):
         # s - направляющий столбец
         # В первую очередь смотрим на коэффициент Q
         max = -sys.maxsize
-        for i in range(len(z[0])):
+        for i in range(size):
             if (z[0][i] > max and z[0][i] > 0):
                 max = z[0][i]
                 s = i
         # Если коэффициент Q == 0, то смотрим на числовой коэффициент
         if max == -sys.maxsize:
-            max *= -1
-            for i in range(len(z[1])):
-                if (z[1][i] < max and z[1][i] < 0):
+            for i in range(size):
+                if (z[1][i] > max and z[1][i] > 0):
                     max = z[1][i]
                     s = i
 

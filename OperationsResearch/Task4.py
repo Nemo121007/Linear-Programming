@@ -234,10 +234,10 @@ def ReturnPath(path):
     if len(l) == 1:
         path = l[0]
 
-        """
+
         #Для замкнутого обхода!
         path.append((path[len(path) - 1][1], path[0][0]))
-        """
+
         return path
     else:
         return None
